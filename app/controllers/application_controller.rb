@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   # Allowlist approach for user access
+  before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: :home
 
   def home
