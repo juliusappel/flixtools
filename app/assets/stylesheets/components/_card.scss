@@ -1,14 +1,61 @@
 .cards {
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+@media ( max-width: 900px ) {  /** Größerer Viewport: Tablett **/
+	.cards {
+		grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media ( max-width: 650px ) {  /** Größerer Viewport: Tablett **/
+	.cards {
+		grid-template-columns: 1fr;
+  }
 }
 
 .card-product {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
   display: flex;
   align-items: center;
+  margin: 1rem 1rem 1rem 1rem;
+  position: relative;
+}
+
+.location {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.location span {
+  background-color: $navbar-footer;
+  padding: 5px;
+  text-align: center;
+  color: white;
+}
+
+.availability {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+#greendot {
+  background-color: $maingreen;
+  border-radius: 10px;
+  // width: 15px;
+  // height: 15px;
+  color: white;
+  padding: 5px 8px;
+  font-size: 10px;
 }
 
 .card-product img {
