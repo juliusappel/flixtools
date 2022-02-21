@@ -1,0 +1,2 @@
+class Appliance < ApplicationRecord
+end
