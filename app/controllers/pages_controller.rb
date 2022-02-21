@@ -2,6 +2,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def index
+    @appliances = Appliance.all
+  end
+
   def show_own_bookings
     @bookings = Booking.where("user_id = '#{current_user.id}'")
   end
