@@ -1,7 +1,6 @@
 class ApplianceController < ApplicationController
-  before_action :set_appliance, only: %i[show edit update destroy]
-
-  @owner = appliance.user_id
+  before_action :set_appliance, only: %i[show]
+  before_action :set_owner, only: %i[edit update destroy]
 
   def index
     @appliances = Appliance.all
@@ -36,6 +35,11 @@ class ApplianceController < ApplicationController
 
   def set_appliance
     @appliance = Appliance.find(params[:id])
+  end
+
+  def set_owner
+    set_appliance
+    @owner = appliance.user_id
   end
 
   def appliance_params
