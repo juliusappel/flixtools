@@ -13,20 +13,38 @@ class ApplianceController < ApplicationController
   end
 
   def create
+    @appliance = Appliance.new(appliance_params)
 
+    respond_to do |format|
+      if @appliance.save
+        format.html { redirect_to appliance_url(@appliance), notice: "Appliance was successfully created." }
+        format.json { render :show, status: :created, location: @appliance }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @appliance.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit; end
 
   def update
-
+    respond_to do |format|
+      if @appliance.update(appliance_params)
+        format.html { redirect_to appliance_url(@appliance), notice: "Appliance was successfully updated." }
+        format.json { render :show, status: :ok, location: @appliance }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @appliance.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @appliance.destroy
 
     respond_to do |format|
-      format.html { redirect_to appliances_url, notice: "Appli was successfully destroyed." }
+      format.html { redirect_to appliances_url, notice: "Appliance was successfully destroyed." }
       format.json { head :no_content }
     end
   end
