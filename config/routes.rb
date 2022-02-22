@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'booking/create'
+  get 'booking/request_confirmation'
   get 'appliance/index'
   get 'appliance/show'
   get 'appliance/new'
