@@ -7,7 +7,16 @@ class ApplianceController < ApplicationController
   end
 
   def show
+    # Set empty booking form
     @booking = Booking.new
+
+    # Set marker for Mapbox map
+    @markers = @appliance.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude
+      }
+    end
   end
 
   def new
