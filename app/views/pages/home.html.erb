@@ -4,49 +4,26 @@
   <div class="cards">
 
     <% @appliances.each do |appliance| %>
-    <div class="card-product">
-      <img src="https://picsum.photos/120" />
-      <div class="card-product-infos">
-        <h2><%= appliance.title %></h2>
-        <p><%= appliance.description %></p>
-        <div class="location">
-          <p><span><%= appliance.location %></span></p>
-        </div>
-        <div class="availability">
-          <% availability = ['Available', 'Unavailable'].sample %>
-          <% if availability == 'Available' %>
-            <div id="greendot"><%= availability %></div>
-          <% else %>
-            <div id="reddot"><%= availability %></div>
-          <% end %>
+      <% sig = rand(1000) %>
+      <% picture = "https://source.unsplash.com/random/120×120/?#{appliance.title}?sig=#{sig}" %>
+      <div class="card-product">
+        <%= image_tag(picture, alt: "Tool", height: 120, width: 120) %>
+        <div class="card-product-infos">
+          <h2><%= appliance.title %></h2>
+          <p><%= appliance.description %></p>
+          <div class="location">
+            <p><span><%= appliance.location %></span></p>
+          </div>
+          <div class="availability">
+            <% availability = ['Available', 'Unavailable'].sample %>
+            <% if availability == 'Available' %>
+              <div id="greendot"><%= availability %></div>
+            <% else %>
+              <div id="reddot"><%= availability %></div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
-
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
   </div>
 </div>
