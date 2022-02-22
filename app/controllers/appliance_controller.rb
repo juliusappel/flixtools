@@ -1,4 +1,4 @@
-class ApplianceController < ApplicationController
+class AppliancesController < ApplicationController
   before_action :set_appliance, only: %i[show]
   before_action :set_owner, only: %i[edit update destroy]
 
@@ -7,7 +7,7 @@ class ApplianceController < ApplicationController
   end
 
   def show
-    @booking = Bookin
+    @booking = Booking.new
   end
 
   def new
