@@ -15,7 +15,7 @@
             <p><span><%= appliance.location %></span></p>
           </div>
           <div class="price">
-            <p><%= appliance.price %>,00€</p>
+            <div id="pricetag"><%= appliance.price %>,00€<span>/day</span></div>
           </div>
           <div class="availability">
             <% availability = ['Available', 'Unavailable'].sample %>

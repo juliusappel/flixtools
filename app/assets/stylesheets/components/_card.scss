@@ -43,7 +43,21 @@
 }
 
 .price {
-  
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.price span {
+  font-weight: lighter;
+  font-size: 12px
+}
+
+#pricetag {
+  color: $navbar-footer;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: bolder;
 }
 
 .availability {
