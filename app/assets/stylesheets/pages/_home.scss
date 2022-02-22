@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  height: calc(100vh - 170px);
+}
+
+.content {
+  min-height: calc(100vh - 170px);
+}
+
 .home {
   margin: 0 auto;
   margin-top: 2rem;

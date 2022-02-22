@@ -1,5 +1,5 @@
 <div class="row signup">
-  <div class="col-6">
+  <div class="col-4">
     <h2>Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -22,8 +22,9 @@
       <div class="form-actions btn btn-flat">
         <%= f.button :submit, "Sign up" %>
       </div>
+      <br>
     <% end %>
-
+    <br>
     <%= render "devise/shared/links" %>
   </div>
 </div>
