@@ -1,2 +1,34 @@
-<h1>Appliance#show</h1>
-<p>Find me in app/views/appliance/show.html.erb</p>
+<div class="appliance">
+  <div class="appliance-content">
+    <p id="pricelabel"><%= @appliance.price %>,00€/day</p>
+    <h2><%= @appliance.title %></h2>
+    <div class="appliance-infos">
+      <p><%= @appliance.location %></p>
+      <% availability = ['Available', 'Unavailable'].sample %>
+        <% if availability == 'Available' %>
+          <p id="ava-green"><%= availability %></p>
+        <% else %>
+          <p id="ava-red"><%= availability %></p>
+        <% end %>
+    </div>
+    <p><%= @appliance.description %></p>
+  </div>
+  <div class="appliance-pic">
+    <%= image_tag("https://source.unsplash.com/random/250x250/?appliance", alt: "Tool", height: 400, width: 400) %>
+    <div class="bookform">
+      <%= simple_form_for(@booking) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+        </div>
+
+        <div class="form-actions btn btn-flat">
+          <%= f.button :submit, "Book now" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
