@@ -6,17 +6,27 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <div class="d-flex justify-content-between">
+          <%= f.input :first_name,
+                      required: true%>
+          <%= f.input :last_name,
+                      required: true%>
+        </div>
+        <%= f.input :username,
+                    required: true%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
       </div>
 
       <div class="form-actions btn btn-flat">
