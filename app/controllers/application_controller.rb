@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   # Allowlist approach for user access
   before_action :authenticate_user!
+  include Pundit
   skip_before_action :authenticate_user!, only: %i[home appliance]
+
+  after_action :verify_authorized, except: :home, unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
 
   def home
   end
@@ -16,4 +20,11 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name username])
   end
+
+  private
+
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
 end
