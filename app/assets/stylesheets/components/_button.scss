@@ -49,3 +49,12 @@
 .btns {
   display: flex;
 }
+
+.btn-book {
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: $navbar-footer;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
