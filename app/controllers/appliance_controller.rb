@@ -7,7 +7,7 @@ class ApplianceController < ApplicationController
   end
 
   def show
-    @booking = Bookin
+    @booking = Booking.new
   end
 
   def new
