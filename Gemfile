@@ -66,3 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gemfile for user signup/login
 gem 'devise'
+
+# Gem for Mapbox view
+gem "geocoder"
