@@ -3,19 +3,26 @@
   <center><h2>Tools in your area</h2></center>
   <div class="cards">
 
+    <% @appliances.each do |appliance| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <img src="https://picsum.photos/120" />
       <div class="card-product-infos">
-        <h2>Hammer</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+        <h2><%= appliance.title %></h2>
+        <p><%= appliance.description %></p>
         <div class="location">
-          <p><span>Bernkastel-Kues</span></p>
+          <p><span><%= appliance.location %></span></p>
         </div>
         <div class="availability">
-          <div id="greendot">Available</div>
+          <% availability = ['Available', 'Unavailable'].sample %>
+          <% if availability == 'Available' %>
+            <div id="greendot"><%= availability %></div>
+          <% else %>
+            <div id="reddot"><%= availability %></div>
+          <% end %>
         </div>
       </div>
     </div>
+    <% end %>
 
     <div class="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />

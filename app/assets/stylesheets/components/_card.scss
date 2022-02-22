@@ -51,8 +51,14 @@
 #greendot {
   background-color: $maingreen;
   border-radius: 10px;
-  // width: 15px;
-  // height: 15px;
+  color: white;
+  padding: 5px 8px;
+  font-size: 10px;
+}
+
+#reddot {
+  background-color: #d65454;
+  border-radius: 10px;
   color: white;
   padding: 5px 8px;
   font-size: 10px;
