@@ -1,9 +1,10 @@
 class AppliancesController < ApplicationController
   before_action :set_appliance, only: %i[show]
   before_action :set_owner, only: %i[edit update destroy]
+  before_action :authorize_appliance
 
   def index
-    @appliances = Appliance.all
+    @appliances = policy_scope(Appliance).order(created_at: :desc)
   end
 
   def show
@@ -64,5 +65,9 @@ class AppliancesController < ApplicationController
 
   def appliance_params
     params.require(:appliance).permit(:title, :description, :price, :location)
+  end
+
+  def authorize_appliance
+    authorize @appliance
   end
 end
