@@ -6,7 +6,9 @@ class ApplianceController < ApplicationController
     @appliances = Appliance.all
   end
 
-  def show; end
+  def show
+    @booking = Bookin
+  end
 
   def new
     @appliance = Appliance.new
