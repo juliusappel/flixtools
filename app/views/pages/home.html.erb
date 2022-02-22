@@ -1,29 +1,34 @@
 <%= render "shared/banner" %>
 <div class="home">
-  <center><h2>Tools in your area</h2></center>
+  <center><h2>Appliances in your area</h2></center>
   <div class="cards">
 
     <% @appliances.each do |appliance| %>
       <% sig = rand(1000) %>
       <% picture = "https://source.unsplash.com/random/120×120/?#{appliance.title}?sig=#{sig}" %>
-      <div class="card-product">
-        <%= image_tag(picture, alt: "Tool", height: 120, width: 120) %>
-        <div class="card-product-infos">
-          <h2><%= appliance.title %></h2>
-          <p><%= appliance.description %></p>
-          <div class="location">
-            <p><span><%= appliance.location %></span></p>
-          </div>
-          <div class="availability">
-            <% availability = ['Available', 'Unavailable'].sample %>
-            <% if availability == 'Available' %>
-              <div id="greendot"><%= availability %></div>
-            <% else %>
-              <div id="reddot"><%= availability %></div>
-            <% end %>
+      <%= link_to appliance_path(appliance) do %>
+        <div class="card-product">
+          <%= image_tag(picture, alt: "Tool", height: 120, width: 120) %>
+          <div class="card-product-infos">
+            <h2><%= appliance.title %></h2>
+            <p><%= appliance.description %></p>
+            <div class="location">
+              <p><span><%= appliance.location %></span></p>
+            </div>
+            <div class="price">
+              <div id="pricetag"><%= appliance.price %>,00€<span>/day</span></div>
+            </div>
+            <div class="availability">
+              <% availability = ['Available', 'Unavailable'].sample %>
+              <% if availability == 'Available' %>
+                <div id="greendot"><%= availability %></div>
+              <% else %>
+                <div id="reddot"><%= availability %></div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
