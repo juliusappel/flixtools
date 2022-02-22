@@ -1,13 +1,13 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-left: 3rem;
   margin-right: 3rem;
 }
 
 @media ( max-width: 900px ) {  /** Größerer Viewport: Tablett **/
 	.cards {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
   }
 }
 
@@ -40,6 +40,10 @@
   padding: 5px;
   text-align: center;
   color: white;
+}
+
+.price {
+  
 }
 
 .availability {

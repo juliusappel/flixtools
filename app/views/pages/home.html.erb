@@ -1,6 +1,6 @@
 <%= render "shared/banner" %>
 <div class="home">
-  <center><h2>Tools in your area</h2></center>
+  <center><h2>Appliances in your area</h2></center>
   <div class="cards">
 
     <% @appliances.each do |appliance| %>
@@ -13,6 +13,9 @@
           <p><%= appliance.description %></p>
           <div class="location">
             <p><span><%= appliance.location %></span></p>
+          </div>
+          <div class="price">
+            <p><%= appliance.price %>,00€</p>
           </div>
           <div class="availability">
             <% availability = ['Available', 'Unavailable'].sample %>
