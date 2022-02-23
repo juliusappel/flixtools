@@ -12,7 +12,7 @@ class AppliancePolicy < ApplicationPolicy
   def new?
     true
   end
-  
+
   def show?
     true
   end

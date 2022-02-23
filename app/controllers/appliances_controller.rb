@@ -1,7 +1,8 @@
 class AppliancesController < ApplicationController
   before_action :set_appliance, only: %i[show]
   before_action :set_owner, only: %i[edit update destroy]
-  before_action :authorize_appliance, except: :index
+  before_action :authorize_appliance, except: %i[index new create]
+  after_action :authorize_appliance, only: %i[new create]
 
   def index
     @appliances = policy_scope(Appliance).order(created_at: :desc)
@@ -25,19 +26,17 @@ class AppliancesController < ApplicationController
 
   def create
     @appliance = Appliance.new(appliance_params)
+    @appliance.user_id = current_user.id
 
-    respond_to do |format|
-      if @appliance.save
-        format.html { redirect_to appliance_url(@appliance), notice: "Appliance was successfully created." }
-        format.json { render :show, status: :created, location: @appliance }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @appliance.errors, status: :unprocessable_entity }
-      end
+    if @appliance.save!
+      redirect_to @appliance, notice: "Your appliance was successfully listed."
+    else
+      render :new
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     respond_to do |format|
@@ -54,9 +53,10 @@ class AppliancesController < ApplicationController
   def destroy
     @appliance.destroy
 
-    respond_to do |format|
-      format.html { redirect_to appliances_url, notice: "Appliance was successfully destroyed." }
-      format.json { head :no_content }
+    if @appliance.destroy
+      redirect_to dashboard_path, notice: "Your appliance was successfully deleted."
+    else
+      render :show
     end
   end
 
@@ -68,7 +68,7 @@ class AppliancesController < ApplicationController
 
   def set_owner
     set_appliance
-    @owner = appliance.user_id
+    @owner = @appliance.user_id
   end
 
   def appliance_params
