@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   skip_before_action :authenticate_user!, only: %i[home appliance]
 
-  after_action :verify_authorized, except: :home, unless: :skip_pundit?
+  after_action :verify_authorized, except: %i[home index], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
 
   def home

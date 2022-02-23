@@ -11,10 +11,17 @@
           <p id="ava-red"><%= availability %></p>
         <% end %>
     </div>
+    <%= image_tag("https://source.unsplash.com/random/250x250/?appliance", alt: "Tool", height: 400, width: 400) %>
     <p><%= @appliance.description %></p>
+    <% if policy(@appliance).edit? %>
+      <%= link_to "Update", edit_appliance_path(@appliance), class: "btn btn-ghost" %>
+    <% end %>
+
+    <% if policy(@appliance).destroy? %>
+      <%= link_to "Delete", appliance_path(@appliance), method: :delete, class: "btn btn-ghost" %>
+    <% end %>
   </div>
   <div class="appliance-pic">
-    <%= image_tag("https://source.unsplash.com/random/250x250/?appliance", alt: "Tool", height: 400, width: 400) %>
     <div class="bookform">
       <%= simple_form_for(@booking) do |f| %>
         <%= f.error_notification %>
@@ -32,11 +39,3 @@
     </div>
   </div>
 </div>
-
-<% if policy(@appliance).edit? %>
-  <%= link_to "Update", edit_appliance_path(@appliance) %>
-<% end %>
-
-<% if policy(@appliance).destroy? %>
-  <%= link_to "Delete", appliances_path %>
-<% end %>
