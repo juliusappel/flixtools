@@ -12,10 +12,11 @@
         <% end %>
     </div>
     <p><%= @appliance.description %></p>
-    <div style="width: 80%; height: 600px;"
-                data-controller="mapbox"
-                data-mapbox-markers-value="<%= @markers.to_json %>"
-                data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div  class="appliance-infos"
+          style="width: 80%; height: 600px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
   <div class="appliance-pic">
