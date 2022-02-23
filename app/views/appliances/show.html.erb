@@ -20,6 +20,12 @@
     <% if policy(@appliance).destroy? %>
       <%= link_to "Delete", appliance_path(@appliance), method: :delete, class: "btn btn-ghost" %>
     <% end %>
+    <div  class="appliance-infos"
+          style="width: 80%; height: 600px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
   <div class="appliance-pic">
     <div class="bookform">

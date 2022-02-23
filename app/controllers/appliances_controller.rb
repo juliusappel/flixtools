@@ -13,12 +13,11 @@ class AppliancesController < ApplicationController
     @booking = Booking.new
 
     # Set marker for Mapbox map
-    # @markers = @appliance.geocoded.map do |a|
-    #   {
-    #     lat: a.latitude,
-    #     lng: a.longitude
-    #   }
-    # end
+    @markers =
+      [{
+        lat: @appliance.latitude,
+        lng: @appliance.longitude
+      }]
   end
 
   def new
