@@ -12,6 +12,11 @@
         <% end %>
     </div>
     <p><%= @appliance.description %></p>
+    <div style="width: 80%; height: 600px;"
+                data-controller="mapbox"
+                data-mapbox-markers-value="<%= @markers.to_json %>"
+                data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
   <div class="appliance-pic">
     <%= image_tag("https://source.unsplash.com/random/250x250/?appliance", alt: "Tool", height: 400, width: 400) %>

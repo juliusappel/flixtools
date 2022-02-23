@@ -5,6 +5,6 @@ class Appliance < ApplicationRecord
   validates :price, numericality: true
 
   # Gecode location
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
