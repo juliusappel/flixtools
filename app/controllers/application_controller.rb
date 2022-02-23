@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Allowlist approach for user access
   before_action :authenticate_user!
   include Pundit
-  skip_before_action :authenticate_user!, only: %i[home appliance]
+  skip_before_action :authenticate_user!, only: %i[home appliance show]
 
   after_action :verify_authorized, except: %i[home index], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
