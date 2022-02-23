@@ -1,7 +1,7 @@
 class AppliancesController < ApplicationController
   before_action :set_appliance, only: %i[show]
   before_action :set_owner, only: %i[edit update destroy]
-  before_action :authorize_appliance, only: %i[edit update destroy]
+  before_action :authorize_appliance, except: :index
 
   def index
     @appliances = policy_scope(Appliance).order(created_at: :desc)
