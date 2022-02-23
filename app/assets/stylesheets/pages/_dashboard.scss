@@ -1,0 +1,30 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(236, 236, 236);
+  border-radius: 8px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 200px;
+  width: 100%;
+}
+
+.dashview {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  align-items: center;
+}
+
+.act-listings {
+  background-color: rgb(236, 236, 236);
+  margin-right: 3rem;
+  border-radius: 8px;
+}
+
+.act-bookings {
+  background-color: rgb(236, 236, 236);
+  border-radius: 8px;
+}
