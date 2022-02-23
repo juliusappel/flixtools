@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Appliance.destroy_all
+
 12.times do
   user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.first_name, username: Faker::Name.first_name, email: Faker::Internet.email, password: 'shawarma')
   cities = ['Cologne', 'Düsseldorf', 'Bonn', 'Frechen', 'Essen', 'Bochum', 'Koblenz']
