@@ -1,2 +1,30 @@
-<% @appliances.each do |appliance| %>
-<% end %>
+<div class="user">
+  <div class="userdetails">
+    <h3>My account</h3>
+    <p><%= @user.first_name %> <%= @user.last_name %></p>
+    <span>@<%= @user.username %></span>
+    <p><%= @user.email %></p>
+    <br>
+    <%= link_to "Edit profile", "#", class: btn btn-ghost %>
+  </div>
+  <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar" %>
+</div>
+
+<div class="dashview">
+  <div class="act-listings">
+    <h4>My active listings</h4>
+    <br>
+    <ul>
+      <% @appliances.each do |appliance| %>
+        <li><p><%= appliance.title %> / Price: <%= appliance.price %></p></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="act-bookings">
+    <h4>My active bookings</h4>
+    <br>
+
+  </div>
+
+</div>

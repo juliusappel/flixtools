@@ -32,3 +32,11 @@
     </div>
   </div>
 </div>
+
+<% if policy(@appliance).edit? %>
+  <%= link_to "Update", edit_appliance_path(@appliance) %>
+<% end %>
+
+<% if policy(@appliance).destroy? %>
+  <%= link_to "Delete", appliances_path %>
+<% end %>
