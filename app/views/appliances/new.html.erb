@@ -1,6 +1,22 @@
-<div class="row appliance">
-  <div class="col-6">
-    <h1>Appliance#new</h1>
-    <p>Find me in app/views/appliance/new.html.erb</p>
+<div class="row new-appliance">
+  <div class="col-4">
+    <h2>List your appliance</h2>
+
+
+<%= simple_form_for(@appliance) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-flat" %>
+  </div>
+  <% end %>
   </div>
 </div>
