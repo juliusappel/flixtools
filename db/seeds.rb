@@ -9,10 +9,10 @@ require 'faker'
 
 12.times do
   user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.first_name, username: Faker::Name.first_name, email: Faker::Internet.email, password: 'shawarma')
-
+  cities = ['Cologne', 'Düsseldorf', 'Bonn', 'Frechen', 'Essen', 'Bochum', 'Koblenz']
   app = Appliance.create!(user: user, title: Faker::Appliance.brand + " " + Faker::Appliance.equipment,
-    description: Faker::Lorem.sentence(word_count: 10),
-    price: rand(1..10), location: Faker::Address.full_address)
+    description: Faker::Lorem.sentence(word_count: 16),
+    price: rand(1..10), location: cities.sample)
     # Convert price to integer and add € sign in view
   puts app.title
 end

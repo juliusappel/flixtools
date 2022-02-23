@@ -7,11 +7,8 @@ class PagesController < ApplicationController
     @appliances = Appliance.all
   end
 
-  def show_own_bookings
+  def dashboard
     @bookings = Booking.where("user_id = '#{current_user.id}'")
-  end
-
-  def active_listings
     @appliances = Appliance.where("user_id = '#{current_user.id}'")
   end
 
