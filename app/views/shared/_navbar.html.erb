@@ -3,7 +3,16 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://i.ibb.co/FWbx2zS/Flix-Tools.png" %>
     <% end %>
-
+    <div class="searchbar">
+      <div id="s-form">
+        <%= form_for root_path, method: :get do |f| %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find an Appliance" %></div>
+          <div id="submit"><%= submit_tag 'Search', class: 'btn-search' %></div>
+        <% end %>
+      </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

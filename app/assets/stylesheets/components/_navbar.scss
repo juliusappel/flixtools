@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: $navbar-footer;
   padding-left: 3rem;
@@ -13,4 +14,38 @@
 
 .navbar-lewagon .navbar-brand img {
   height: 25px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+  border: 1px solid $maingrey;
+  border-radius: 8px;
+}
+
+.searchbar input {
+  background-color: transparent;
+  color: rgb(201, 201, 201);
+  border: 0;
+}
+
+.searchbar input:focus {
+  background-color: #2F3230;
+  color: white;
+}
+
+.btn-search {
+  background-color: #2F3230;
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-left: 0.2rem;
+}
+
+.btn-search:hover {
+  background-color: #545855;
+  padding: 8px 10px;
+  font-size: 13px;
 }
