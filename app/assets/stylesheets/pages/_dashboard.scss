@@ -82,11 +82,31 @@ h3 {
   align-items: center;
   width: 100%;
   padding: 0;
-  justify-content: flex-start;
+  justify-content: space-between;
+  .banana {
+    flex-grow: 1;
+  }
 }
+
 
 .con img {
   height: 15px;
-  width: auto;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
+}
+
+.pee {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 auto;
+  font-weight: bolder;
+  background-color: #dfdfdf;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  height: 100%;
+  width: 100%;
+  p {
+    margin: 0;
+  }
 }

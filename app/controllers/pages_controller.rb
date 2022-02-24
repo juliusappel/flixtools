@@ -16,6 +16,18 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def destroy
+    @appliance = Appliance.find(params[:id])
+    @owner = @appliance.user_id
+    @appliance.destroy
+
+    if @appliance.destroy
+      redirect_to dashboard_path, notice: "Your appliance was successfully deleted."
+    else
+      render :show
+    end
+  end
+
   private
 
   def user
