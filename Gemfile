@@ -71,3 +71,6 @@ gem 'devise'
 
 # Gem for Mapbox view
 gem "geocoder"
+
+# Gem for photo upload
+gem 'cloudinary'
