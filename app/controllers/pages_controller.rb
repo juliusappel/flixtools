@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
     @appliances = Appliance.all
+    if params[:query]
+      @appliances = Appliance.search(params[:query])
+    end
   end
 
   def index
