@@ -12,7 +12,7 @@
     <%= f.input :description, placeholder: 'Very effective cleaning machine' %>
     <%= f.input :price, placeholder: '5,00€', label: 'Price per day' %>
     <%= f.input :location, placeholder: 'Im Mediapark 5, Cologne', label: 'Address' %>
-    <%= f.input :photo, as: :file, label: "Photos" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Photos" %>
   </div>
 
   <div class="form-actions">
