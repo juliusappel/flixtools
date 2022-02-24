@@ -1,2 +1,23 @@
-<h1>Appliance#edit</h1>
-<p>Find me in app/views/appliance/edit.html.erb</p>
+<div class="row new-appliance">
+  <div class="col-4">
+    <h2>Edit your appliance</h2>
+
+
+<%= simple_form_for(@appliance) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+    <%= f.input :photo, as: :file, label: "Photos" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-flat" %>
+  </div>
+  <% end %>
+  </div>
+</div>

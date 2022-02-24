@@ -16,8 +16,9 @@
     <br>
     <% @appliances.each do |appliance| %>
       <%= link_to appliance_path(appliance) do %>
-        <div>
+        <div class="con">
           <p><%= appliance.title %> - Price: <%= appliance.price %>,00€</p>
+          <i class="fa-solid fa-trash-can"></i>
         </div>
       <% end %>
     <% end %>
@@ -26,7 +27,18 @@
   <div class="act-bookings">
     <h4>My active bookings</h4>
     <br>
-
+    <% @bookings.each do |booking| %>
+      <%= link_to appliance_path(booking.appliance) do %>
+        <div class="con">
+          <p><%= booking.appliance.title %> - Price: <%= booking.appliance.price %>,00€</p>
+          <div class="trash">
+            <a href="#">
+              <img src="https://www.clipartmax.com/png/full/219-2194818_trash-can-vector-trash-can-icon-png.png" alt="trash_icon">
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
 </div>
