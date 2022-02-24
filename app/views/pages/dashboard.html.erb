@@ -7,7 +7,7 @@
     <br>
     <%= link_to "Edit profile", "#", class: "btn btn-ghost" %>
   </div>
-  <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar-dashboard" %>
+  <%= cl_image_tag @user.photo.key, crop: :fill, class: "avatar-dashboard" %>
 </div>
 
 <div class="dashview">
