@@ -7,17 +7,5 @@
     <% else %>
       <%= link_to "List my appliance", new_user_registration_path, class: "btn btn-flat" %>
     <% end %>
-
-    <div>
-      <div class="w-50 m-auto">
-        <%= form_for root_path, method: :get do |f| %>
-          <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find an Appliance" %>
-          <%= submit_tag 'Search', class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
