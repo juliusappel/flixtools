@@ -15,16 +15,16 @@
     <!-- Image slider  -->
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <% @appliance.photos.each do |photo| %>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= cl_image_tag photo.key, :transformation=>[
-                  {:height=>350, :crop=>"scale"},
-                  {:fetch_format=>:auto},
-                  class: "d-block w-100"
-                  ] %>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, :transformation=>[
+                    {:height=>350, :crop=>"scale"},
+                    {:fetch_format=>:auto},
+                    class: "d-block w-100"
+                    ] %>
+          </div>
         </div>
-        <% end %>
-      </div>
+      <% end %>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -35,6 +35,7 @@
       </button>
     </div>
 
+    <br>
     <p><%= @appliance.description %></p>
     <% if policy(@appliance).edit? %>
       <%= link_to "Update", edit_appliance_path(@appliance), class: "btn btn-ghost" %>
