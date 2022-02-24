@@ -13,10 +13,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def navbar
-    @user = User.fin
-  end
-
   private
 
   def user
