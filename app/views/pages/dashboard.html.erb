@@ -5,7 +5,7 @@
     <span>@<%= @user.username %></span>
     <p><%= @user.email %></p>
     <br>
-    <%= link_to "Edit profile", "#", class: "btn btn-ghost" %>
+    <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-ghost" %>
   </div>
   <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar-dashboard" %>
 </div>
@@ -14,11 +14,13 @@
   <div class="act-listings">
     <h4>My active listings</h4>
     <br>
-    <ul>
-      <% @appliances.each do |appliance| %>
-        <li><p><%= appliance.title %> / Price: <%= appliance.price %></p></li>
+    <% @appliances.each do |appliance| %>
+      <%= link_to appliance_path(appliance) do %>
+        <div>
+          <p><%= appliance.title %> - Price: <%= appliance.price %>,00€</p>
+        </div>
       <% end %>
-    </ul>
+    <% end %>
   </div>
 
   <div class="act-bookings">
