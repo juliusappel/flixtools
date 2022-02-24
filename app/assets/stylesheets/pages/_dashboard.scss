@@ -8,9 +8,10 @@
   margin-right: 3rem;
   margin-top: 3rem;
   padding: 2rem;
+  font-family: 'Lato', sans-serif;
 }
 
-.user h3 {
+h3 {
   font-family: 'Lato';
   font-weight: bolder;
 }
@@ -24,7 +25,22 @@
   justify-content: space-between;
   margin-left: 3rem;
   margin-right: 3rem;
-  align-items: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.dashview h4 {
+  font-family: 'Lato';
+  font-weight: bolder;
+}
+
+.dashview p {
+  margin: 0 auto;
+  font-weight: bolder;
+  background-color: #dfdfdf;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .act-listings {
@@ -33,6 +49,12 @@
   border-radius: 8px;
   padding: 2rem;
   margin-top: 3rem;
+  width: 100%;
+}
+
+.act-listings a {
+  text-decoration: none;
+  color: black;
 }
 
 .act-bookings {
@@ -40,10 +62,51 @@
   border-radius: 8px;
   padding: 2rem;
   margin-top: 3rem;
+  width: 100%;
+}
+
+.act-bookings a {
+  text-decoration: none;
+  color: black;
 }
 
 .avatar-dashboard {
   width: 150px;
   border-radius: 50%;
   margin-right: 1rem;
+}
+
+.con {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  justify-content: space-between;
+  .banana {
+    flex-grow: 1;
+  }
+}
+
+
+.con img {
+  height: 15px;
+  margin-left: 1rem;
+}
+
+.pee {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 auto;
+  font-weight: bolder;
+  background-color: #dfdfdf;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  height: 100%;
+  width: 100%;
+  p {
+    margin: 0;
+  }
 }
