@@ -72,7 +72,7 @@ class AppliancesController < ApplicationController
   end
 
   def appliance_params
-    params.require(:appliance).permit(:title, :description, :price, :location)
+    params.require(:appliance).permit(:title, :description, :price, :location, photos: [])
   end
 
   def authorize_appliance
