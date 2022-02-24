@@ -8,10 +8,11 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :location %>
+    <%= f.input :title, placeholder: 'Kärcher - High pressure cleaner'%>
+    <%= f.input :description, placeholder: 'Very effective cleaning machine' %>
+    <%= f.input :price, placeholder: '5,00€', label: 'Price per day' %>
+    <%= f.input :location, placeholder: 'Im Mediapark 5, Cologne', label: 'Address' %>
+    <%= f.input :photo, as: :file, label: "Photos" %>
   </div>
 
   <div class="form-actions">
