@@ -5,6 +5,7 @@ body {
 }
 
 .content {
+  margin: 0;
   min-height: calc(100vh - 170px);
 }
 
@@ -18,3 +19,21 @@ body {
   margin-bottom: 2.1rem;
   font-weight: bolder;
 }
+
+// .notice {
+//   // display: none;
+//   background-color: rgb(255, 237, 198);
+//   padding: 1rem;
+//   border-radius: 8px;
+//   border: 2px dotted $navbar-footer;
+//   margin: 3rem;
+// }
+
+// .alert {
+//   // display: none;
+//   background-color: rgba(255, 117, 117, 0.4);
+//   padding: 1rem;
+//   border-radius: 8px;
+//   border: 2px dotted $navbar-footer;
+//   margin-right: 2rem;
+// }
