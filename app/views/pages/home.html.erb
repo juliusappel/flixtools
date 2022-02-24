@@ -3,7 +3,7 @@
   <center><h2>Appliances in your area</h2></center>
   <div class="cards">
 
-    <% @appliances.each do |appliance| %>
+    <% @appliances.shuffle.first(6).each do |appliance| %>
       <% sig = rand(1000) %>
       <% picture = "https://source.unsplash.com/random/120×120/?#{appliance.title}?sig=#{sig}" %>
       <%= link_to appliance_path(appliance) do %>
