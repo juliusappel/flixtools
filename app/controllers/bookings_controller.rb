@@ -1,11 +1,13 @@
 class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
+    @booking.appliance_id = Appliance.find(params[:id])
 
-    if @booking.save
+    if @booking.save!
       redirect_to dashboard_path
     else
-      render :new
+      render root_path
     end
   end
 
