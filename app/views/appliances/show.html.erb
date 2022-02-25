@@ -1,54 +1,54 @@
 <div class="appliance">
   <div class="appliance-content">
-    <p id="pricelabel"><%= @appliance.price %>,00€/day</p>
-    <h2><%= @appliance.title %></h2>
-    <div class="appliance-infos">
-      <p><%= @appliance.location %></p>
-      <% availability = ['Available', 'Unavailable'].sample %>
-      <% if availability == 'Available' %>
-        <p id="ava-green"><%= availability %></p>
-      <% else %>
-        <p id="ava-red"><%= availability %></p>
-      <% end %>
+    <div id="appliance-head">
+      <p id="pricelabel"><%= @appliance.price %>,00€/day</p>
+      <h2><%= @appliance.title %></h2>
+      <div class="appliance-infos">
+        <p><%= @appliance.location %></p>
+        <% availability = ['Available', 'Unavailable'].sample %>
+        <% if availability == 'Available' %>
+          <p id="ava-green"><%= availability %></p>
+        <% else %>
+          <p id="ava-red"><%= availability %></p>
+        <% end %>
+      </div>
     </div>
-
     <!-- Image slider  -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <% @appliance.photos.each do |photo| %>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag photo.key, :transformation=>[
-                    {:height=>350, :crop=>"scale"},
-                    {:fetch_format=>:auto},
-                    class: "d-block w-100"
-                    ] %>
+    <div id="images">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <% @appliance.photos.each do |photo| %>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              <%# <%= cl_image_tag photo.key, :transformation=>[
+                      {:height=>350, :crop=>"scale"},
+                      {:fetch_format=>:auto},
+                      class: "d-block w-100"
+                      ] %> %>
+            </div>
           </div>
-        </div>
-      <% end %>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <% end %>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
 
     <br>
-    <p><%= @appliance.description %></p>
-    <% if policy(@appliance).edit? %>
-      <%= link_to "Update", edit_appliance_path(@appliance), class: "btn btn-ghost" %>
-    <% end %>
-
-    <% if policy(@appliance).destroy? %>
-      <%= link_to "Delete", appliance_path(@appliance), method: :delete, class: "btn btn-ghost" %>
-    <% end %>
-    <div  class="appliance-infos"
-          style="width: 80%; height: 600px;"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="desc">
+      <p><%= @appliance.description %></p>
+      <% if policy(@appliance).edit? %>
+        <%= link_to "Update", edit_appliance_path(@appliance), class: "btn btn-ghost" %>
+      <% end %>
+      
+      <% if policy(@appliance).destroy? %>
+        <%= link_to "Delete", appliance_path(@appliance), method: :delete, class: "btn btn-ghost" %>
+      <% end %>
     </div>
   </div>
   <div class="appliance-pic">
@@ -66,6 +66,14 @@
           <%= f.button :submit, "Book now" %>
         </div>
       <% end %>
+    </div>
+    <div class="map">
+      <div  class="appliance-infos"
+            style="width: 100%; height: 400px;"
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>

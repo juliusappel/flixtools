@@ -14,9 +14,29 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    set_owner
+    @booking.destroy
+
+    if @booking.destroy
+      redirect_to dashboard_path, notice: "Your booking was successfully deleted."
+    else
+      render :show
+    end
+  end
+
   private
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def set_owner
+    set_booking
+    @owner = @booking.user_id
+  end
   # Only allow a list of trusted parameters through.
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end

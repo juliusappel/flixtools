@@ -28,6 +28,7 @@
   background-color: transparent;
   color: rgb(201, 201, 201);
   border: 0;
+  border-radius: 8px 0px 0px 8px;
 }
 
 .searchbar input:focus {
@@ -39,7 +40,7 @@
   background-color: #2F3230;
   padding: 8px 10px;
   font-size: 13px;
-  border-radius: 8px;
+  // border-radius: 8px;
   transition: 0.3s;
   margin-left: 0.2rem;
 }
@@ -48,4 +49,5 @@
   background-color: #545855;
   padding: 8px 10px;
   font-size: 13px;
+  border-radius: 0 8px 8px 0;
 }
