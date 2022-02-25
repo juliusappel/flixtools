@@ -18,6 +18,7 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :photo, as: :file, label: "Profile photo" %>
         <div class="d-flex justify-content-between">
           <%= f.input :password,
                       required: true,
