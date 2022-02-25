@@ -15,7 +15,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    set_booking
     set_owner
+    authorize @booking
     @booking.destroy
 
     if @booking.destroy
@@ -32,7 +34,6 @@ class BookingsController < ApplicationController
   end
 
   def set_owner
-    set_booking
     @owner = @booking.user_id
   end
   # Only allow a list of trusted parameters through.
