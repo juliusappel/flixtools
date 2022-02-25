@@ -9,6 +9,12 @@
   // align-items: center;
 }
 
+.appliance-pic {
+  position: sticky;
+  top: calc(70px + 3rem);
+  right: 0;
+}
+
 .appliance h2 {
   font-family: 'Lato', sans-serif;
   font-weight: bolder;
@@ -92,6 +98,16 @@
   background-color: $maingrey;
   border-radius: 8px;
   padding: 2rem;
+}
+
+.map-outer {
+  margin-right: 3rem;
+}
+
+.map {
+  margin-right: 3rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
 }
 
 //// NEW APPLIANCE
