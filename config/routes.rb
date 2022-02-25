@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'appliance/index'
-  get 'appliance/show'
-  get 'appliance/new'
-  get 'appliance/create'
-  get 'appliance/edit'
-  get 'appliance/destroy'
+  # get 'appliance/index'
+  # get 'appliance/show'
+  # get 'appliance/new'
+  # get 'appliance/create'
+  # get 'appliance/edit'
+  # get 'appliance/destroy'
+  resources :appliances
   devise_for :users
   root to: 'pages#home'
   resources :appliances do
