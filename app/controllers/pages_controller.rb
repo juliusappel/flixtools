@@ -12,6 +12,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = Booking.where("user_id = '#{current_user.id}'")
+
     @appliances = Appliance.where("user_id = '#{current_user.id}'")
     @user = current_user
   end

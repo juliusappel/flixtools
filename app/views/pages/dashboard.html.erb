@@ -22,7 +22,7 @@
           </div>
         <% end %>
         <%# <%= link_to image_tag("https://www.clipartmax.com/png/full/219-2194818_trash-can-vector-trash-can-icon-png.png"), appliance, method: :delete, class: 'trash' %>
-        <%= link_to appliance, method: :delete, class: "trash" do %>
+        <%= link_to appliance, method: :delete, class: "trash", method: :delete, data: {confirm: "Are you sure?"} do %>
           <i class="fa fa-trash"></i></a>
         <% end %>
       </div>
@@ -40,7 +40,7 @@
             </div>
           <% end %>
           <%# <%= link_to image_tag("https://www.clipartmax.com/png/full/219-2194818_trash-can-vector-trash-can-icon-png.png"), booking.appliance, method: :delete, class: 'trash' %>
-          <%= link_to booking, method: :delete, class: "trash" do %>
+          <%= link_to booking, method: :delete, class: "trash", method: :delete, data: {confirm: "Are you sure?"} do %>
             <i class="fa fa-trash"></i></a>
           <% end %>
         </div>
