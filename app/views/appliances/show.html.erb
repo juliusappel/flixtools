@@ -18,19 +18,11 @@
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @appliance.photos.first.key, :transformation=>[
-                {:height=>350, :crop=>"scale"},
-                {:fetch_format=>:auto},
-                class: "d-block w-100"
-                ] %>
+              <%= cl_image_tag(@appliance.photos.first.key, { width: "100%" }) %>
             </div>
             <% @appliance.photos[1..-1].each do |photo| %>
               <div class="carousel-item">
-                <%= cl_image_tag photo.key, :transformation=>[
-                  {:height=>350, :crop=>"scale"},
-                  {:fetch_format=>:auto},
-                  class: "d-block w-100"
-                  ] %>
+                <%= cl_image_tag(photo.key, { width: "100%" }) %>
               </div>
             <% end %>
         </div>
@@ -75,7 +67,7 @@
     </div>
     <div class="map-outer">
       <div class="map"
-            style="width: 100%; height: 400px;"
+            style="width: 100%; height: 300px;"
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
