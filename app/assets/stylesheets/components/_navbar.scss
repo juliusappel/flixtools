@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
   z-index: 1;
 }
@@ -14,6 +14,7 @@
   padding-right: 3rem;
   color: white;
   height: 70px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
