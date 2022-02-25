@@ -10,7 +10,7 @@
   <% if @user.photo.attached? %>
     <%= cl_image_tag @user.photo.key, class: "avatar-dashboard" %>
   <% else %>
-    <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar-dashboard" %>
+      <%= image_tag "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/0a/0a54d18df155de0b4aaafa60cb4c9ad09c40ec32_full.jpg", class: "avatar-dashboard" %>
   <% end %>
 </div>
 
