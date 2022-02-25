@@ -16,18 +16,24 @@
     <!-- Image slider  -->
     <div id="images">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <% @appliance.photos.each do |photo| %>
-          <div class="carousel-inner">
+        <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-              <%# <%= cl_image_tag photo.key, :transformation=>[
-                      {:height=>350, :crop=>"scale"},
-                      {:fetch_format=>:auto},
-                      class: "d-block w-100"
-                      ] %> %>
+              <%= cl_image_tag @appliance.photos.first.key, :transformation=>[
+                {:height=>350, :crop=>"scale"},
+                {:fetch_format=>:auto},
+                class: "d-block w-100"
+                ] %>
             </div>
-          </div>
-        <% end %>
+            <% @appliance.photos[1..-1].each do |photo| %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key, :transformation=>[
+                  {:height=>350, :crop=>"scale"},
+                  {:fetch_format=>:auto},
+                  class: "d-block w-100"
+                  ] %>
+              </div>
+            <% end %>
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -45,7 +51,7 @@
       <% if policy(@appliance).edit? %>
         <%= link_to "Update", edit_appliance_path(@appliance), class: "btn btn-ghost" %>
       <% end %>
-      
+
       <% if policy(@appliance).destroy? %>
         <%= link_to "Delete", appliance_path(@appliance), method: :delete, class: "btn btn-ghost" %>
       <% end %>
