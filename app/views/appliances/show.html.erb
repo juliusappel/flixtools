@@ -17,16 +17,22 @@
     <div id="images">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <% @appliance.photos.each do |photo| %>
             <div class="carousel-item active">
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-              <%# <%= cl_image_tag photo.key, :transformation=>[
-                      {:height=>350, :crop=>"scale"},
-                      {:fetch_format=>:auto},
-                      class: "d-block w-100"
-                      ] %> %>
+              <%= cl_image_tag @appliance.photos.first.key, :transformation=>[
+                {:height=>350, :crop=>"scale"},
+                {:fetch_format=>:auto},
+                class: "d-block w-100"
+                ] %>
             </div>
-          <% end %>
+            <% @appliance.photos[1..-1].each do |photo| %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key, :transformation=>[
+                  {:height=>350, :crop=>"scale"},
+                  {:fetch_format=>:auto},
+                  class: "d-block w-100"
+                  ] %>
+              </div>
+            <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
