@@ -7,7 +7,11 @@
     <br>
     <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-ghost" %>
   </div>
-  <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar-dashboard" %>
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "avatar-dashboard" %>
+  <% else %>
+    <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620", class: "avatar-dashboard" %>
+  <% end %>
 </div>
 
 <div class="dashview">
