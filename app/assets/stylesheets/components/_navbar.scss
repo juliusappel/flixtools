@@ -1,3 +1,11 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  // overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
@@ -6,6 +14,7 @@
   padding-right: 3rem;
   color: white;
   height: 70px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {

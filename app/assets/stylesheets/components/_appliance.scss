@@ -9,6 +9,12 @@
   // align-items: center;
 }
 
+.appliance-pic {
+  position: sticky;
+  top: calc(70px + 3rem);
+  align-self: flex-start;
+}
+
 .appliance h2 {
   font-family: 'Lato', sans-serif;
   font-weight: bolder;
@@ -25,6 +31,7 @@
   border-radius: 8px;
   margin-right: 3rem;
   margin-bottom: 1.5rem;
+  margin-top: 3rem;
 }
 
 .appliance-infos {
@@ -45,7 +52,7 @@
 
 #pricelabel {
   position: absolute;
-  top: 2rem;
+  top: 5rem;
   right: 5rem;
   font-size: 20px;
   font-weight: bolder;
@@ -73,7 +80,7 @@
 
 #images {
   background-color: $maingrey;
-  height: 400px;
+  // height: 400px;
   border-radius: 8px;
   padding: 2rem;
   margin-right: 3rem;
@@ -92,6 +99,16 @@
   background-color: $maingrey;
   border-radius: 8px;
   padding: 2rem;
+}
+
+.map-outer {
+  margin-right: 3rem;
+}
+
+.map {
+  margin-right: 3rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
 }
 
 //// NEW APPLIANCE

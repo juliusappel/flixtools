@@ -6,7 +6,7 @@
   border-radius: 8px;
   margin-left: 3rem;
   margin-right: 3rem;
-  margin-top: 3rem;
+  margin-top: calc(3rem + 70px);
   padding: 2rem;
   font-family: 'Lato', sans-serif;
 }
@@ -67,7 +67,7 @@ h3 {
 
 .act-bookings a {
   text-decoration: none;
-  color: $navbar-footer;
+  color: black;
 }
 
 .avatar-dashboard {
@@ -112,7 +112,7 @@ h3 {
 }
 
 .trash {
-  margin-left: 0.8rem;
+  margin-left: 1rem;
 }
 
 .trash i {
