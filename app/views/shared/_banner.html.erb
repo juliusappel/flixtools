@@ -3,7 +3,7 @@
     <h1>Welcome to <strong>FlixTools</strong></h1>
     <p>Your place to rent appliances from your neighbors.</p>
     <% if user_signed_in? %>
-      <%= link_to "Dashboard", "#", class: "btn btn-flat" %>
+      <%= link_to "Dashboard", dashboard_path, class: "btn btn-flat" %>
     <% else %>
       <%= link_to "List my appliance", new_user_registration_path, class: "btn btn-flat" %>
     <% end %>
